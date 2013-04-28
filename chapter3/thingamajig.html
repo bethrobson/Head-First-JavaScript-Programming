@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Thing-a-ma-jig</title>
+  </head>
+  <body>
+  </body>
+  <script>
+function clunk(times) {
+    var num = times;
+    while (num > 0) {
+        console.log("clunk");
+        clunkCounter = clunkCounter + 1;
+        num = num - 1;
+    }
+}
+
+function thingamajig(size) {
+    var facky = 1;
+    if (size == 0) {
+       console.log("clank");
+    } else if (size == 1) {
+       console.log("thunk");
+    } else {
+        while (size > 1) {
+            facky = facky * size;
+            size = size - 1;
+        }
+        clunk(facky);
+    }
+}
+var clunkCounter = 0;
+thingamajig(5);
+console.log(clunkCounter);
+  </script>
+</body>
+</html>
