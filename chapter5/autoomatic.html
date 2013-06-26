@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Object-o-matic</title>
+  <meta charset="utf-8">
+  <script>
+	function makeCar() {
+		var makes = ["Chevy", "Ford", "Fiat", "Webville Motors", "Tucker"];
+		var models = ["Cadillac", "500", "Bel-Air", "Taxi", "Torpedo"];
+		var years = ["1955", "1957", "1948", "1954", "1961"];
+
+		var rand1 = Math.floor(Math.random() * makes.length);
+		var rand2 = Math.floor(Math.random() * models.length);
+		var rand3 = Math.floor(Math.random() * years.length);
+
+		var imaginaryCar = {
+			make: makes[rand1],
+			model: models[rand2],
+			year: years[rand3]
+		};
+
+		return imaginaryCar;
+	}
+
+	function displayCar(car) {
+		console.log("Your imaginary car is a " + car.year + " " + car.make + " " + car.model);
+	}
+
+	var myImaginaryCar = makeCar();
+	displayCar(myImaginaryCar);
+
+  </script>
+</head>
+<body></body>
+</html>
