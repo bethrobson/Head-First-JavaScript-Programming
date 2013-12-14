@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <title> Tick Tock </title>
+  <meta charset="utf-8">
+  <script>
+
+	function display(text) { 
+		var messagePara = document.getElementById("message"); 
+		messagePara.innerHTML = messagePara.innerHTML + text;
+	}
+
+	var tick = true;
+
+	function ticker() {
+		if (tick) {
+			display("TICK");
+			tick = false;
+		} else {
+			display("TOCK");
+			tick = true;
+		}
+	}
+
+	window.onload = function() {
+		setInterval(ticker, 1000);
+	}
+
+  </script>
+</head>
+<body>
+<p id="message"></p>
+</body>
+</html>
