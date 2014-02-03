@@ -24,6 +24,10 @@ var fiat = {
 	},
 
     drive: function() {
+		//
+		// if we use started instead of this.started, 
+		// our code doesn't work!
+		//
 		if (this.started) {
 			alert("Zoom zoom!");
 		} else {
