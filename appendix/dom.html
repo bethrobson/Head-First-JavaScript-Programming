@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Doing more with the DOM </title>
+  <script>
+window.onload = function() {
+
+	//
+	//  matches the first li element with the class "song"
+	//
+	var li = document.querySelector("#playlist .song");
+
+	console.log("Matched the song " + li.innerHTML);
+
+
+	// 
+	// create a new element and add it to the page
+	//
+	var newItem = document.createElement("li");
+	newItem.innerText = "Your Random Heart";
+	var ul = document.getElementById("playlist");
+	ul.appendChild(newItem);
+}
+  </script>
+</head>
+<body>
+<ul id="playlist">
+<li class="song">Blue Suede Strings</li>
+<li class="song">Great Objects on Fire</li>
+<li class="song">I Code the Line</li>
+<li class="song">That'll be the Data</li>
+</ul>
+</body>
+</html>

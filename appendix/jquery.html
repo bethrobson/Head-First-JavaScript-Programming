@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Brief intro to jQuery </title>
+  <style>
+	div {
+		margin: 20px;
+		padding: 50px;
+		background-color: lightyellow;
+	}
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+$(function() {
+	$("#specialoffer").click(function() {
+		$(this).fadeOut(800, function() {
+			$(this).fadeIn(400);
+		});
+	});
+});
+
+  </script>
+</head>
+<body>
+<div id="specialoffer">I'm a special offer</div>
+</body>
+</html>
