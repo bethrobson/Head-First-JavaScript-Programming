@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Show dogs</title>
+<script>
+
+function Dog(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+}
+
+Dog.prototype.species = "Canine";
+Dog.prototype.sitting = false;
+Dog.prototype.sit = function() {
+	if (this.sitting) {
+		console.log(this.name + " is already sitting");
+	} else {
+		console.log(this.name + " is now sitting");
+		this.sitting = true;
+	}
+}
+Dog.prototype.bark = function() {
+	if (this.weight > 25) {
+		console.log(this.name + " says Woof!");
+	} else {
+		console.log(this.name + " says Yip!");
+	}
+};
+Dog.prototype.run = function() {
+    console.log("Run!");
+};
+Dog.prototype.wag = function() {
+    console.log("Wag!");
+};
+
+function ShowDog(name, breed, weight, handler) {
+	// let the Dog constructor handle this
+	Dog.call(this, name, breed, weight);
+
+	this.handler = handler;
+}
+
+//
+// We want the ShowDog prototype to be a Dog instance
+//
+ShowDog.prototype = new Dog(); 
+
+//
+// We do this to make sure the constructor property is correct
+//
+ShowDog.prototype.constructor = ShowDog;
+
+
+
+ShowDog.prototype.league = "Webville";
+
+ShowDog.prototype.stack = function() { 
+	console.log("Stack");
+};
+
+ShowDog.prototype.gait = function(kind) {
+	console.log(kind + "ing");
+};
+
+ShowDog.prototype.examine = function() {
+	console.log("Examine");
+};
+
+ShowDog.prototype.groom = function() {
+	console.log("Groom");
+};
+
+
+var fido = new Dog("Fido", "Mixed", 38);
+var fluffy = new Dog("Fluffy", "Poodle", 30);
+var spot = new Dog("Spot", "Chihuahua", 10);
+spot.bark = function() {
+	console.log(this.name + " says WOOF!");
+};
+
+var scotty = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
+var beatrice = new ShowDog("Beatrice", "Pomeranian", 5, "Hamilton");
+
+fido.bark();
+fluffy.bark();
+spot.bark();
+scotty.bark();
+beatrice.bark();
+
+scotty.gait("Walk");
+beatrice.groom();
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
