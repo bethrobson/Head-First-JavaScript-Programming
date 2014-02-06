@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dog Catcher</title>
+<script>
+
+function dogCatcher(obj) {
+	if (obj instanceof Dog) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function Cat(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+}
+var meow = {name: "Meow", breed: "Siamese", weight: 10}; 
+var whiskers = {name: "Whiskers", breed: "Mixed", weight: 12}; 
+
+var fido = {name: "Fido", breed: "Mixed", weight: 38}; 
+
+function Dog(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+    this.bark = function() {
+        if (this.weight > 25) {
+            alert(this.name + " says Woof!");
+        } else {
+            alert(this.name + " says Yip!");
+        }
+    };
+}
+var fluffy = new Dog("Fluffy", "Poodle", 30);
+var spot = new Dog("Spot", "Chihuahua", 10);
+var dogs = [meow, whiskers, fido, fluffy, spot];
+
+for (var i = 0; i < dogs.length; i++) {
+    if (dogCatcher(dogs[i])) {
+        console.log(dogs[i].name + " is a dog!");
+    }
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
+
