@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Car with drive</title>
+<title>Car properties</title>
 <script>
 
 var fiat = { 
@@ -24,22 +24,21 @@ var fiat = {
 	},
 
     drive: function() {
-		//
-		// if we use started instead of this.started, 
-		// our code doesn't work!
-		//
 		if (this.started) {
-			alert("Zoom zoom!");
+			alert(this.make + " " +
+					this.model + " goes zoom zoom!");
 		} else {
 			alert("You need to start the engine first.");
 		}
 	}
 };
 
-fiat.drive();
 fiat.start();
 fiat.drive();
-fiat.stop();
+
+for (prop in fiat) {
+	console.log(prop + ": " + fiat[prop]);
+}
 
 </script>
 </head>
