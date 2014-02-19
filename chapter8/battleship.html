@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Battleship</title>
 <meta charset="utf-8">
+<title>Battleship</title>
 <style>
 body {
 	background-color: black;
@@ -27,6 +27,18 @@ div#messageArea {
 .miss {
 	background: url("miss.png") no-repeat center center;
 }
+table {
+	border-spacing: 0px; 
+	/* could use border-collapse instead */
+	/* border-collapse: collapse; */
+	position: absolute;
+	left: 173px;
+	top: 98px;
+}
+td {
+	width: 94px;
+	height: 94px;
+}
 form {
 	position: absolute;
 	bottom: 0px;
@@ -38,18 +50,6 @@ form input {
 	background-color: rgb(152, 207, 113);
 	border-color: rgb(83, 175, 19);
 	font-size: 1em;
-}
-table {
-	border-spacing: 0px; 
-	/* can also use border-collapse instead */
-	/* border-collapse: collapse; */
-	position: absolute;
-	left: 173px;
-	top: 98px;
-}
-td {
-	width: 94px;
-	height: 94px;
 }
 </style>
 </head>
