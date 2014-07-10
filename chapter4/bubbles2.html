@@ -35,6 +35,11 @@ console.log("Solutions with the highest score: " + bestSolutions);
 // compute the most cost effective of the best solutions
 //
 mostCostEffective = getMostCostEffectiveSolution(scores, costs, highScore);
+
+// or use the more efficient function:
+//mostCostEffective = getMostCostEffectiveSolution2(bestSolutions, costs, highScore);
+
+// display the results
 console.log("Bubble Solution #" + mostCostEffective + " is the most cost effective");
 
 function printAndGetHighScore(scores) {
@@ -61,12 +66,12 @@ function getBestResults(scores, highScore) {
 }
 
 
-function getMostCostEffectiveSolution(scores, costs, highscore) {
+function getMostCostEffectiveSolution(scores, costs, highScore) {
 	var cost = 100.00; // much higher than any of the costs
 	var index;
 
 	for (var i = 0; i < scores.length; i++) {
-		if (scores[i] == highscore) {
+		if (scores[i] == highScore) {
 			if (cost > costs[i]) {
 				index = i;
 				cost = costs[i];
@@ -81,7 +86,7 @@ function getMostCostEffectiveSolution(scores, costs, highscore) {
 // and use the index stored there to find the cost value of that solution.
 // This is a little more efficient, but not quite as easy to read!
 //
-function getMostCostEffectiveSolution2(bestSolutions, costs, highscore) {
+function getMostCostEffectiveSolution2(bestSolutions, costs, highScore) {
 	var cost = 100.0;
 	var solutionIndex;
 	var lowCostIndex;
@@ -90,7 +95,7 @@ function getMostCostEffectiveSolution2(bestSolutions, costs, highscore) {
 		solutionIndex = bestSolutions[i];
 		if (cost > costs[solutionIndex]) {
 			lowCostIndex = solutionIndex;
-			cost = costs[i];
+			cost = costs[solutionIndex];
 		}
 	}
 	return lowCostIndex;
