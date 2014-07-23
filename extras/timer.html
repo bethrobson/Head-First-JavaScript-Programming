@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Webville Lounge</title>
+<script>
+
+var dj = {
+	playsound: function() {
+		console.log("Playing ", this.sound);
+	},
+	sound: "bells"
+};
+
+var controller = {
+	timer: null,
+	start: function() {
+		this.timer = setInterval(dj.playsound.bind(dj), 1000);
+	}, 
+	stop: function() {
+		clearInterval(this.timer);
+	}
+};
+
+window.onload = function() {
+
+	//controller.start();
+
+	var startButton = document.getElementById("start");
+	startButton.onclick = function() {
+		controller.start();
+	};
+
+	var stopButton = document.getElementById("stop");
+	stopButton.onclick = function() {
+		controller.stop();
+	};
+};
+
+</script>
+</head>
+<body>
+	<button id="start">start</button>
+	<button id="stop">stop</button>
+</body>
+</html> 
+
