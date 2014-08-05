@@ -67,7 +67,7 @@ function getBestResults(scores, highScore) {
 
 
 function getMostCostEffectiveSolution(scores, costs, highScore) {
-	var cost = 100.00; // much higher than any of the costs
+	var cost = 100; // much higher than any of the costs
 	var index;
 
 	for (var i = 0; i < scores.length; i++) {
@@ -87,7 +87,7 @@ function getMostCostEffectiveSolution(scores, costs, highScore) {
 // This is a little more efficient, but not quite as easy to read!
 //
 function getMostCostEffectiveSolution2(bestSolutions, costs, highScore) {
-	var cost = 100.0;
+	var cost = 100;
 	var solutionIndex;
 	var lowCostIndex;
 
