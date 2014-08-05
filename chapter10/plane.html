@@ -29,7 +29,7 @@ function checkNotPaid(passenger) {
 
 function printPassenger(passenger) {
 	var message = passenger.name;
-	if (passenger.paid === true) {
+	if (passenger.paid) {
 		message = message + " has paid";
 	} else {
 		message = message + " has not paid";
