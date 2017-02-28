@@ -7,12 +7,9 @@
 
 String.prototype.palindrome = function() {
 	var len = this.length-1;
-	for (var i = 0; i <= len; i++) {
+	for (var i = 0; i <= len/2; i++) {
 		if (this.charAt(i) !== this.charAt(len-i)) {
 			return false;
-		}
-		if (i === (len-i)) {
-			return true;
 		}
 	}
 	return true;
